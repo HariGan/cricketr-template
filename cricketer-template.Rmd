@@ -274,7 +274,7 @@ sangakkara <- batsmanRunsPredict("./player4.csv","Player4",newdataframe=newDF)
 
 
 ```{r plot14,cache=TRUE}
-batsmen <-cbind(round(Player1$Runs),round(Player2$Runs),round(ponting$Runs),round(sangakkara$Runs))
+batsmen <-cbind(round(Player1$Runs),round(Player2$Runs),round(Player3$Runs),round(Player4$Runs))
 colnames(batsmen) <- c("Player1","Player2","Player3","Player4")
 newDF <- data.frame(round(newDF$BF),round(newDF$Mins))
 colnames(newDF) <- c("BallsFaced","MinsAtCrease")
