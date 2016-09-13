@@ -52,6 +52,8 @@ tendulkar <- getPlayerData(35320,dir="..",file="tendulkar.csv",type="batting",ho
                            result=c(1,2,4))
 ```
 
+*Note* For One day you will have to use getPlayerDataOD() and for Twenty20 it is getPlayerDataTT()
+
 **Important Note**
 This needs to be done only once for a player. This function stores the player's data in a CSV file (for e.g. tendulkar.csv as above) which can then be reused for all other functions. Once we have the data for the players many analyses can be done. This post will use the stored CSV file obtained with a prior getPlayerData for all subsequent analyses
 
@@ -290,6 +292,8 @@ predictedRuns
 3. Bowler3
 4. Bowler4
 
+player1 <- getPlayerData(xxxx,dir="..",file="player1.csv",type="bowling")
+*Note* For One day you will have to use getPlayerDataOD() and for Twenty20 it is getPlayerDataTT()
 
 ## Wicket Frequency Plot
 This plot below computes the percentage frequency of number of wickets taken for e.g
