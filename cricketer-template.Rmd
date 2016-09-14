@@ -83,14 +83,53 @@ dev.off()
 4. Player 4 
 
 
+```{r plot1 }
+par(mfrow=c(1,3))
+par(mar=c(4,4,2,2))
+batsman4s("./player1.csv","Player1")
+batsman6s("./player1.csv","Player1")
+batsmanMeanStrikeRate("./player1.csv","Player1")
+dev.off()
+```
+```{r plot2 }
+par(mfrow=c(1,3))
+par(mar=c(4,4,2,2))
+batsman4s("./player2.csv","Player2")
+batsman6s("./player2.csv","Player2")
+batsmanMeanStrikeRate("./player2.csv","Player2")
+dev.off()
+```
+
+
+```{r plot3 }
+par(mfrow=c(1,3))
+par(mar=c(4,4,2,2))
+batsman4s("./player3.csv","Player3")
+batsman6s("./player3.csv","Player3")
+batsmanMeanStrikeRate("./player3.csv","Player3")
+dev.off()
+```
+
+```{r plot4 }
+par(mfrow=c(1,3))
+par(mar=c(4,4,2,2))
+batsman4s("./player4.csv","Player4")
+batsman6s("./player4.csv","Player4")
+batsmanMeanStrikeRate("./player4.csv","Player4")
+dev.off()
+```
+*Note*: For mean strike rate in ODI and Twenty20 use the function batsmanScoringRateODTT()
+```
 This plot shows a combined boxplot of the Runs ranges  and a histogram of the Runs Frequency
-```{r plot1,cache=TRUE}
+```{r plot5,cache=TRUE}
 batsmanPerfBoxHist("./player1.csv","Player1")
 batsmanPerfBoxHist("./player2.csv","Player2")
 batsmanPerfBoxHist("./player3.csv","Player3")
 batsmanPerfBoxHist("./player4.csv","Player4")
 
 ```
+
+
 
 ## Contribution to won and lost matches
 
@@ -104,7 +143,7 @@ have commented this as I already have these files
 #player4sp <- getPlayerDataSp(xxxx,tdir=".",tfile="player4sp.csv",ttype="batting")
 ```
 
-```{r plot2,cache=TRUE}
+```{r plot6,cache=TRUE}
 par(mfrow=c(2,2))
 par(mar=c(4,4,2,2))
 batsmanContributionWonLost("player1sp.csv","Player1")
@@ -119,7 +158,7 @@ dev.off()
 
 
 This function also requires the use of getPlayerDataSp() as shown above
-```{r plot3,cache=TRUE}
+```{r plot7,cache=TRUE}
 par(mfrow=c(2,2))
 par(mar=c(4,4,2,2))
 batsmanPerfHomeAway("player1sp.csv","Player1")
@@ -133,7 +172,7 @@ dev.off()
 ## Moving Average of runs in career
 
 
-```{r plot4}
+```{r plot8}
 par(mfrow=c(2,2))
 par(mar=c(4,4,2,2))
 batsmanMovingAverage("./player1.csv","Player1")
@@ -144,7 +183,7 @@ dev.off()
 ```
 
 ## Cumulative Average runs of batsman in career
-```{r plot5}
+```{r plot9}
 par(mfrow=c(2,2))
 par(mar=c(4,4,2,2))
 batsmanCumulativeAverageRuns("./player1.csv","Player1")
@@ -155,7 +194,7 @@ dev.off()
 ```
 
 ## Cumulative Average strike rate  of batsman in career
-```{r plot6}
+```{r plot10}
 par(mfrow=c(2,2))
 par(mar=c(4,4,2,2))
 batsmanCumulativeStrikeRate("./player1.csv","Player1")
@@ -172,7 +211,7 @@ A Holt-Winters forecating model is used to forecast future performance based on 
 Take a look at the runs forecasted for the batsman below.
 
 
-```{r plot7,cache-TRUE}
+```{r plot11,cache-TRUE}
 par(mfrow=c(2,2))
 par(mar=c(4,4,2,2))
 batsmanPerfForecast("./player1.csv","Player1")
@@ -185,7 +224,7 @@ dev.off()
 ## Relative Mean Strike Rate plot
 The plot below compares the Mean Strike Rate of the batsman for each of the runs ranges of 10 and plots them. The plot indicate the following
 
-```{r plot8,cache=TRUE}
+```{r plot12,cache=TRUE}
 frames <- list("./player1.csv","./player2.csv","player3.csv","player4.csv")
 names <- list("Player1","Player2","Player3","Player4")
 relativeBatsmanSR(frames,names)
@@ -196,7 +235,7 @@ relativeBatsmanSR(frames,names)
 ## Relative Runs Frequency plot
 The plot below gives the relative Runs Frequency Percetages for each 10 run bucket. The plot below show
 
-```{r plot9,cache=TRUE}
+```{r plot13,cache=TRUE}
 frames <- list("./player1.csv","./player2.csv","player3.csv","player4.csv")
 names <- list("Player1","Player2","Player3","Player4")
 relativeRunsFreqPerf(frames,names)
@@ -205,7 +244,7 @@ relativeRunsFreqPerf(frames,names)
 
 
 ## Relative cumulative average runs in career
-```{r plot10}
+```{r plot14}
 frames <- list("./player1.csv","./player2.csv","player3.csv","player4.csv")
 names <- list("Player1","Player2","Player3","Player4")
 relativeBatsmanCumulativeAvgRuns(frames,names)
@@ -214,7 +253,7 @@ relativeBatsmanCumulativeAvgRuns(frames,names)
 
 
 ## Relative cumulative average strike rate in career
-```{r plot11}
+```{r plot15}
 frames <- list("./player1.csv","./player2.csv","player3.csv","player4.csv")
 names <- list("Player1","Player2","Player3","player4")
 relativeBatsmanCumulativeStrikeRate(frames,names)
@@ -246,14 +285,14 @@ checkBatsmanInForm("./player4.csv","Player4")
 ## 3D plot of Runs vs Balls Faced and Minutes at Crease
 The plot is a scatter plot of Runs vs Balls faced and Minutes at Crease. A prediction plane is fitted
 
-```{r plot12,cache=TRUE}
+```{r plot16,cache=TRUE}
 par(mfrow=c(1,2))
 par(mar=c(4,4,2,2))
 battingPerf3d("./player1.csv","Player1")
 battingPerf3d("./player2.csv","Player2")
 ```
 
-```{r plot13,cache=TRUE}
+```{r plot17,cache=TRUE}
 par(mfrow=c(1,2))
 par(mar=c(4,4,2,2))
 battingPerf3d("./player3.csv","Player3")
@@ -275,7 +314,7 @@ sangakkara <- batsmanRunsPredict("./player4.csv","Player4",newdataframe=newDF)
 
 
 
-```{r plot14,cache=TRUE}
+```{r plot18,cache=TRUE}
 batsmen <-cbind(round(Player1$Runs),round(Player2$Runs),round(Player3$Runs),round(Player4$Runs))
 colnames(batsmen) <- c("Player1","Player2","Player3","Player4")
 newDF <- data.frame(round(newDF$BF),round(newDF$Mins))
@@ -299,7 +338,7 @@ player1 <- getPlayerData(xxxx,dir="..",file="player1.csv",type="bowling")
 This plot below computes the percentage frequency of number of wickets taken for e.g
 1 wicket x%, 2 wickets y% etc and plots them as a continuous line 
 
-```{r plot15}
+```{r plot19}
 par(mfrow=c(1,3))
 par(mar=c(4,4,2,2))
 bowlerWktsFreqPercent("./bowler1.csv","Bowler1")
@@ -310,7 +349,7 @@ dev.off()
 
 ## Wickets Runs plot
 
-```{r plot16,cache =TRUE}
+```{r plot20,cache =TRUE}
 par(mfrow=c(1,3))
 par(mar=c(4,4,2,2))
 bowlerWktsRunsPlot("./bowler1.csv","Bowler1")
@@ -321,14 +360,14 @@ dev.off()
 
 ## Average wickets at different venues
 
-```{r plot17}
+```{r plot21}
 bowlerAvgWktsGround("./bowler3.csv","Bowler3")
 
 ```
 
 ## Average wickets against different opposition
 
-```{r plot18}
+```{r plot22}
 bowlerAvgWktsOpposition("./bowler3.csv","Bowler3")
 
 ```
@@ -336,7 +375,7 @@ bowlerAvgWktsOpposition("./bowler3.csv","Bowler3")
 
 ## Wickets taken moving average
 
-```{r plot19}
+```{r plot23}
 par(mfrow=c(1,3))
 par(mar=c(4,4,2,2))
 bowlerMovingAverage("./bowler1.csv","Bowler1")
@@ -347,7 +386,7 @@ dev.off()
 ```
 
 
-```{r plot20}
+```{r plot24}
 par(mfrow=c(1,3))
 par(mar=c(4,4,2,2))
 bowlerCumulativeAvgWickets("./bowler1.csv","Bowler1")
@@ -356,7 +395,7 @@ bowlerCumulativeAvgWickets("./bowler3.csv","Bowler3")
 dev.off()
 ```
 
-```{r plot21}
+```{r plot25}
 par(mfrow=c(1,3))
 par(mar=c(4,4,2,2))
 bowlerCumulativeAvgEconRate("./bowler1.csv","Bowler1")
@@ -371,7 +410,7 @@ Here are plots that forecast how the bowler will perform in future. In this case
 A Holt-Winters forecating model is used to forecast future performance based on the 90% training set. The forecated wickets trend is plotted. The test set is also plotted to see how close the forecast and the actual matches
 
 
-```{r plot22}
+```{r plot26}
 par(mfrow=c(1,3))
 par(mar=c(4,4,2,2))
 bowlerPerfForecast("./bowler1.csv","Bowler1")
@@ -389,7 +428,7 @@ As discussed above the next 2 charts require the use of getPlayerDataSp()
 ```
 
 
-```{r plot23,cache=TRUE}
+```{r plot27,cache=TRUE}
 par(mfrow=c(1,3))
 par(mar=c(4,4,2,2))
 bowlerContributionWonLost("bowler1sp","Bowler1")
@@ -399,7 +438,7 @@ dev.off()
 ```
 
 ## Performance home and overseas
-```{r plot24,cache=TRUE}
+```{r plot28,cache=TRUE}
 par(mfrow=c(1,3))
 par(mar=c(4,4,2,2))
 bowlerPerfHomeAway("bowler1sp","Bowler1")
@@ -411,21 +450,21 @@ dev.off()
 ## Relative Wickets Frequency Percentage
 
 
-```{r plot25,cache=TRUE}
+```{r plot29,cache=TRUE}
 frames <- list("./bowler1.csv","./bowler3.csv","bowler2.csv")
 names <- list("Bowler1","Bowler3","Bowler2")
 relativeBowlingPerf(frames,names)
 ```
 
 ## Relative Economy Rate against wickets taken
-```{r plot26,cache=TRUE}
+```{r plot30,cache=TRUE}
 frames <- list("./bowler1.csv","./bowler3.csv","bowler2.csv")
 names <- list("Bowler1","Bowler3","Bowler2")
 relativeBowlingER(frames,names)
 ```
 
 ## Relative cumulative average wickets of bowlers in career
-```{r plot27,cache=TRUE}
+```{r plot31,cache=TRUE}
 frames <- list("./bowler1.csv","./bowler3.csv","bowler2.csv")
 names <- list("Bowler1","Bowler3","Bowler2")
 relativeBowlerCumulativeAvgWickets(frames,names)
@@ -434,7 +473,7 @@ relativeBowlerCumulativeAvgWickets(frames,names)
 
 ## Relative cumulative average economy rate of bowlers
 
-```{r plot28,cache=TRUE}
+```{r plot32,cache=TRUE}
 frames <- list("./bowler1.csv","./bowler3.csv","bowler2.csv")
 names <- list("Bowler1","Bowler3","Bowler2")
 relativeBowlerCumulativeAvgEconRate(frames,names)
@@ -455,7 +494,7 @@ If p-value < 0.05 - Batsman Out-of-Form
 
 **Note:** The check for the form status of the bowlers indicate
 
-```{r plot29}
+```{r plot33}
 checkBowlerInForm("./bowler1.csv","Bowler1")
 checkBowlerInForm("./bowler2.csv","Bowler2")
 checkBowlerInForm("./bowler3.csv","Bowler3")
