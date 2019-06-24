@@ -71,8 +71,11 @@ To get the data of any player use the function in Test, ODI and Twenty20 use the
 ```
 
 
-**Important Note**
+**Important Note 1**
 This needs to be done only once for a player. This function stores the player's data in a CSV file (for e.g. tendulkar.csv as above) which can then be reused for all other functions. Once we have the data for the players many analyses can be done. This post will use the stored CSV file obtained with a prior getPlayerData for all subsequent analyses
+
+**Important Note 2**
+The same set of functions can be used for Tests, ODI and T20s. I have mentioned wherever you may need special functions for ODI and T20 below
 
 ## Sachin Tendulkar's performance -  Basic Analyses
 The 3 plots below provide the following for Tendulkar
