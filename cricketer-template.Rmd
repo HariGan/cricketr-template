@@ -1,11 +1,11 @@
 ---
-title: "Analyzing performance of cricketers with cricketr templates"
+title: "Analyzing performance of cricketers and cricket teams with cricketr templates"
 author: "Tinniam V Ganesh"
 date: "March 29, 2019"
 output: html_document
 ---
 
-This post includes a template which you can use for analyzing the performances of cricketers, both batsmen and bowlers in Test, ODI and Twenty 20 cricket using my R package **cricketr**. To see actual usage of functions in the R package cricketr see [Introducing cricketr! : An R package to analyze performances of cricketers](https://gigadom.in/2015/07/04/introducing-cricketr-a-r-package-to-analyze-performances-of-cricketers/).
+This post includes a template which you can use for analyzing the performances of cricketers, both batsmen and bowlers in Test, ODI and Twenty 20 cricket. Additionally this template can also be used for analyzing performancs of teams in Test, ODI and T20  matches using my R package **cricketr**. To see actual usage of functions related to players in the R package cricketr see [Introducing cricketr! : An R package to analyze performances of cricketers](https://gigadom.in/2015/07/04/introducing-cricketr-a-r-package-to-analyze-performances-of-cricketers/) and associated posts on cricket in [Index of posts](https://gigadom.in/aa-2/). For the analyses on team performances see [https://gigadom.in/2019/06/21/cricpy-adds-team-analytics-to-its-repertoire/](https://gigadom.in/2019/06/21/cricpy-adds-team-analytics-to-its-repertoire/)
 
 The 'cricketr'  package uses the statistics info available in [ESPN Cricinfo Statsguru](http://stats.espncricinfo.com/ci/engine/stats/index.html). The current version of this package supports all formats of the game including Test, ODI and
 Twenty20 versions. 
@@ -17,10 +17,11 @@ Take a look at my short video tutorial on my R package cricketr on Youtube - [R 
 Do check out my interactive Shiny app implementation using the cricketr package - [Sixer - R package cricketr's new Shiny avatar](https://tvganesh.shinyapps.io/Sixer)
 
 #The **cricketr** package
-The cricketr package has several functions that perform several different analyses on both batsman and bowlers. The package has function that plot  percentage frequency runs or wickets, runs likelihood for a batsman, relative run/strike rates of batsman and relative performance/economy rate for bowlers are available. 
+The cricketr package has several functions that perform several different analyses on both batsman and bowlers. The package can also analyze performances of teams The package has function that plot  percentage frequency runs or wickets, runs likelihood for a batsman, relative run/strike rates of batsman and relative performance/economy rate for bowlers are available. Other interesting functions include batting performance moving average, forecast  and a function to check whether the batsmans in in-form or out-of-form.
 
-Other interesting functions include batting performance moving average, forecast  and a function to check whether the batsmans in in-form or out-of-form.
+In addition performances of teams against different oppositions at different venues can be computed and plotted. The timeline of wins & losses can be plotted.
 
+## A. Performances of batsmen and bowlers
 The data for a particular player can be obtained with the getPlayerData() function. To do you will need to go to [ESPN CricInfo Player](http://www.espncricinfo.com/ci/content/player/index.html) and type in the name of the player for e.g Ricky Ponting, Sachin Tendulkar etc. This will bring up a page which have the profile number for the player e.g. for Sachin Tendulkar this would be http://www.espncricinfo.com/india/content/player/35320.html. Hence, Sachin's profile is 35320. This can be used to get the data for Tendulkar as shown below
 
 The cricketr package is now available from **CRAN!!!** You should be able to install directly with
@@ -574,3 +575,144 @@ dev.off()
 
 
 ##Analysis of bowlers
+
+##B. Performances of teams
+The following functions will get the team data for Tests, ODI and T20s
+
+###1a. Get Test team data
+```{r}
+#country1Test= getTeamDataHomeAway(dir=".",teamView="bat",matchType="Test",file="country1Test.csv",save=True,teamName="Country1")
+#country2Test= getTeamDataHomeAway(dir=".",teamView="bat",matchType="Test",file="country2Test.csv",save=True,teamName="Country2")
+#country3Test= getTeamDataHomeAway(dir=".",teamView="bat",matchType="Test",file="country3Test.csv",save=True,teamName="Country3")
+```
+
+###1b. Get ODI team  data
+```{r}
+#team1ODI=  getTeamDataHomeAway(dir=".",matchType="ODI",file="team1ODI.csv",save=True,teamName="team1")
+#team2ODI=  getTeamDataHomeAway(dir=".",matchType="ODI",file="team2ODI.csv",save=True,teamName="team2")
+#team3ODI=  getTeamDataHomeAway(dir=".",matchType="ODI",file="team3ODI.csv",save=True,teamName="team3")
+```
+
+###1c. Get T20 team  data
+```{r}
+#team1T20 = getTeamDataHomeAway(matchType="T20",file="team1T20.csv",save=True,teamName="team1")
+#team2T20 = getTeamDataHomeAway(matchType="T20",file="team2T20.csv",save=True,teamName="team2")
+#team3T20 = getTeamDataHomeAway(matchType="T20",file="team3T20.csv",save=True,teamName="team3")
+```
+
+###2a. Test - Analyzing test performances against opposition
+```{r}
+# Get the performance of Indian test team against all teams at all venues as a dataframe
+#df <- teamWinLossStatusVsOpposition("country1Test.csv",teamName="Country1",opposition=c("all"),homeOrAway=c("all"),matchType="Test",plot=FALSE)
+#head(df)
+
+# Plot the performance of Country1 Test team  against all teams at all venues
+#teamWinLossStatusVsOpposition("country1Test.csv",teamName="Country1",opposition=c("all"),homeOrAway=c("all"),matchType="Test",plot=TRUE)
+
+# Plot the performance of Country1 Test team  against specific teams at home/away venues
+#teamWinLossStatusVsOpposition("country1Test.csv",teamName="Country1",opposition=c("Country2","Country3","Country4"),homeOrAway=c("home","away","neutral"),matchType="Test",plot=TRUE)
+
+```
+
+
+###2b. Test - Analyzing test performances against opposition at different grounds
+```{r}
+# Get the performance of Indian test team against all teams at all venues as a dataframe
+#df <- teamWinLossStatusAtGrounds("country1Test.csv",teamName="Country1",opposition=c("all"),homeOrAway=c("all"),matchType="Test",plot=FALSE)
+#head(df)
+
+# Plot the performance of Country1 Test team  against all teams at all venues
+#teamWinLossStatusAtGrounds("country1Test.csv",teamName="Country1",opposition=c("all"),homeOrAway=c("all"),matchType="Test",plot=TRUE)
+
+# Plot the performance of Country1 Test team  against specific teams at home/away venues
+#teamWinLossStatusAtGrounds("country1Test.csv",teamName="Country1",opposition=c("Country2","Country3","Country4"),homeOrAway=c("home","away","neutral"),matchType="Test",plot=TRUE)
+
+```
+
+###2c. Test - Plot time lines of wins and losses
+```{r}
+#plotTimelineofWinsLosses("country1Test.csv",team="Country1",opposition=c("all"), #startDate="1970-01-01",endDate="2017-01-01")
+#plotTimelineofWinsLosses("country1Test.csv",team="Country1",opposition=c("Country2","Count#ry3","Country4"), homeOrAway=c("home",away","neutral"), startDate=<start Date> #,endDate=<endDate>)
+```
+
+###3a. ODI - Analyzing test performances against opposition
+```{r}
+#df <- teamWinLossStatusVsOpposition("team1ODI.csv",teamName="Team1",opposition=c("all"),homeOrAway=c("all"),matchType="ODI",plot=FALSE)
+#head(df)
+
+# Plot the performance of team1  in ODIs against Sri Lanka, India at all venues
+#teamWinLossStatusVsOpposition("team1ODI.csv",teamName="Team1",opposition=c("all"),homeOrAway=c(all"),matchType="ODI",plot=TRUE)
+
+# Plot the performance of Team1 ODI team  against specific teams at home/away venues
+#teamWinLossStatusVsOpposition("team1ODI.csv",teamName="Team1",opposition=c("Team2","Team3","Team4"),homeOrAway=c("home","away","neutral"),matchType="ODI",plot=TRUE)
+```
+
+###3b. ODI - Analyzing test performances against opposition at different venues
+```{r}
+#df <- teamWinLossStatusAtGrounds("team1ODI.csv",teamName="Team1",opposition=c("all"),homeOrAway=c("all"),matchType="ODI",plot=FALSE)
+#head(df)
+
+# Plot the performance of Team1s in ODIs specific ODI teams at all venues
+#teamWinLossStatusAtGrounds("team1ODI.csv",teamName="Team1",opposition=c("all"),homeOrAway=c(all"),matchType="ODI",plot=TRUE)
+
+# Plot the performance of Team1 against specific ODI teams at home/away venues
+#teamWinLossStatusAtGrounds("team1ODI.csv",teamName="Team1",opposition=c("Team2","Team3","Team4"),homeOrAway=c("home","away","neutral"),matchType="ODI",plot=TRUE)
+```
+
+
+###3c. ODI - Plot time lines of wins and losses
+```{r}
+#Plot the time line of wins/losses of Bangladesh ODI team between 2 dates all venues
+#plotTimelineofWinsLosses("team1ODI.csv",team="Team1",startDate=<start date> ,endDa#te=<end date>,matchType="ODI")
+
+#Plot the time line of wins/losses against specific opposition between 2 dates
+#plotTimelineofWinsLosses("team1ODI.csv",team="Team1",opposition=c("Team2","Team2"), homeOrAway=c("home",away","neutral"), startDate=<start date>,endDate=<end date> ,matchType="ODI")
+```
+
+
+###4a. T20 - Analyzing test performances against opposition
+```{r}
+#df <- teamWinLossStatusVsOpposition("teamT20.csv",teamName="Team1",opposition=c("all"),homeOrAway=c("all"),matchType="T20",plot=FALSE)
+#head(df)
+
+# Plot the performance of Team1 in T20s  against  all opposition at all venues
+#teamWinLossStatusVsOpposition("teamT20.csv",teamName="Team1",opposition=c("all"),homeOrAway=c(all"),matchType="T20",plot=TRUE)
+
+# Plot the performance of T20 Test team  against specific teams at home/away venues
+#teamWinLossStatusVsOpposition("teamT20.csv",teamName="Team1",opposition=c("Team2","Team3","Team4"),homeOrAway=c("home","away","neutral"),matchType="T20",plot=TRUE)
+```
+
+###4b. T20 - Analyzing test performances against opposition at different venues
+```{r}
+#df <- teamWinLossStatusAtGrounds("teamT20.csv",teamName="Team1",opposition=c("all"),homeOrAway=c("all"),matchType="T20",plot=FALSE)
+#head(df)
+
+# Plot the performance of Team1s in ODIs specific ODI teams at all venues
+#teamWinLossStatusAtGrounds("teamT20.csv",teamName="Team1",opposition=c("all"),homeOrAway=c(all"),matchType="T20",plot=TRUE)
+
+# Plot the performance of Team1 against specific ODI teams at home/away venues
+#teamWinLossStatusAtGrounds("teamT20.csv",teamName="Team1",opposition=c("Team2","Team3","Team4"),homeOrAway=c("home","away","neutral"),matchType="T20",plot=TRUE)
+```
+
+
+###4c. T20 - Plot time lines of wins and losses
+```{r}
+#Plot the time line of wins/losses of Bangladesh ODI team between 2 dates all venues
+#plotTimelineofWinsLosses("teamT20.csv",team="Team1",startDate=<start date> ,endDa#te=<end date>,matchType="T20")
+
+#Plot the time line of wins/losses against specific opposition between 2 dates
+#plotTimelineofWinsLosses("teamT20.csv",team="Team1",opposition=c("Team2","Team2"), homeOrAway=c("home",away","neutral"), startDate=<start date>,endDate=<end date> ,matchType="T20")
+```
+
+
+## Conclusion
+Using the above template analysis can be done for any team in Test, ODI and T20 against other specific opposition, at home/away and neutral venues. Further the the time line of wins & losses between 2 dates can also be plotted.
+
+
+
+
+
+
+
+
+
