@@ -568,13 +568,6 @@ dev.off()
 ```
 
 
-# Key Findings
-
-
-## Analysis of batsman
-
-
-##Analysis of bowlers
 
 ##B. Performances of teams
 The following functions will get the team data for Tests, ODI and T20s
@@ -704,9 +697,20 @@ The following functions will get the team data for Tests, ODI and T20s
 #plotTimelineofWinsLosses("teamT20.csv",team="Team1",opposition=c("Team2","Team2"), homeOrAway=c("home",away","neutral"), startDate=<start date>,endDate=<end date> ,matchType="T20")
 ```
 
+# Key Findings
+
+
+## Analysis of batsman
+
+
+##Analysis of bowlers
+
+## Analysis of teams
 
 ## Conclusion
-Using the above template analysis can be done for any team in Test, ODI and T20 against other specific opposition, at home/away and neutral venues. Further the the time line of wins & losses between 2 dates can also be plotted.
+Using the above template, analysis can be done for both batsmen and bowlers in Test, ODI and T20. Also analysis of any any team in Test, ODI and T20 against other specific opposition, at home/away and neutral venues can be performed.
+
+Have fun with cricketr!!
 
 
 
