@@ -571,14 +571,14 @@ dev.off()
 ```
 
 
-##7. Performing granular analysis of batsmen and bowlers
+###36. Performing granular analysis of batsmen and bowlers
 To perform granular analysis of batsmen and bowlers do the following 2 steps
 
 1. Step 1: getPlayerDataHA - This function is a wrapper around getPlayerData(), getPlayerDataOD() and getPlayerDataTT(), and adds an extra column 'homeOrAway' which says whether the match was played at home/away/neutral venues. A CSV file is created with this new column.
-2. getPlayerDataOppnHA - This function allows you to slice & dice the data for batsmen and bowlers against specific oppositions, at home/away/neutral venues and between certain periods. This reduced subset of data can be used to perform analyses. A CSV file is created as an output based on the parameters of opposition, home or away and the interval of time
+2. Step2:getPlayerDataOppnHA - This function allows you to slice & dice the data for batsmen and bowlers against specific oppositions, at home/away/neutral venues and between certain periods. This reduced subset of data can be used to perform analyses. A CSV file is created as an output based on the parameters of opposition, home or away and the interval of time
 
 
-###8. GetPlayerDataHA (Batsmen, Tests)
+###37. GetPlayerDataHA (Batsmen, Tests)
 ```{r}
 #This saves a file playerTestHA.csv
 #df=getPlayerDataHA(<profileNo>,tfile="playerTestHA.csv",type="batting", matchType="Test")
@@ -588,7 +588,7 @@ To perform granular analysis of batsmen and bowlers do the following 2 steps
 #                         startDate=<start Date>,endDate=<end Date>)
 ```
 
-###9. GetPlayerDataHA (Bowlers, Tests)
+###38. GetPlayerDataHA (Bowlers, Tests)
 ```{r}
 #This saves a file playerTestHA.csv
 #df=getPlayerDataHA(<profileNo>,tfile="playerTestHA.csv",type="bowling", matchType="Test")
@@ -599,7 +599,7 @@ To perform granular analysis of batsmen and bowlers do the following 2 steps
 ```
 
 
-###10. GetPlayerDataHA (Batsmen, ODI)
+###39. GetPlayerDataHA (Batsmen, ODI)
 
 ```{r}
 #This saves a file playerTestHA.csv
@@ -610,7 +610,7 @@ To perform granular analysis of batsmen and bowlers do the following 2 steps
 #                         startDate=<start Date>,endDate=<end Date>)
 ```
 
-###11. GetPlayerDataHA (Bowlers, ODI)
+###40. GetPlayerDataHA (Bowlers, ODI)
 ```{r}
 #This saves a file playerTestHA.csv
 #df=getPlayerDataHA(<profileNo>,tfile="playerODIHA.csv",type="bowling", matchType="ODI")
@@ -620,7 +620,7 @@ To perform granular analysis of batsmen and bowlers do the following 2 steps
 #                         startDate=<start Date>,endDate=<end Date>)
 ```
 
-###12. GetPlayerDataHA (Batsmen, T20)
+###41. GetPlayerDataHA (Batsmen, T20)
 
 ```{r}
 #This saves a file playerTestHA.csv
@@ -631,7 +631,7 @@ To perform granular analysis of batsmen and bowlers do the following 2 steps
 #                         startDate=<start Date>,endDate=<end Date>)
 ```
 
-###13. GetPlayerDataHA (Bowlers, T20)
+###42. GetPlayerDataHA (Bowlers, T20)
 ```{r}
 #This saves a file playerTestHA.csv
 #df=getPlayerDataHA(<profileNo>,tfile="playerT20HA.csv",type="bowling", matchType="T20")
@@ -646,7 +646,7 @@ To perform granular analysis of batsmen and bowlers do the following 2 steps
 data for a fine-grained analysis
 
 
-##14. Performances of teams
+##8. Performances of teams
 The following functions will get the team data for Tests, ODI and T20s
 
 ###1a. Get Test team data
