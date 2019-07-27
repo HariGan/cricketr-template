@@ -1,7 +1,7 @@
 ---
 title: "Analyzing performance of cricketers and cricket teams with cricketr templates"
 author: "Tinniam V Ganesh"
-date: "March 29, 2019"
+date: "July 27, 2019"
 output: html_document
 ---
 
