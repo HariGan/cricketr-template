@@ -577,6 +577,8 @@ To perform granular analysis of batsmen and bowlers do the following 2 steps
 1. Step 1: getPlayerDataHA - This function is a wrapper around getPlayerData(), getPlayerDataOD() and getPlayerDataTT(), and adds an extra column 'homeOrAway' which says whether the match was played at home/away/neutral venues. A CSV file is created with this new column.
 2. Step2:getPlayerDataOppnHA - This function allows you to slice & dice the data for batsmen and bowlers against specific oppositions, at home/away/neutral venues and between certain periods. This reduced subset of data can be used to perform analyses. A CSV file is created as an output based on the parameters of opposition, home or away and the interval of time
 
+See [Cricketr learns new tricks : Performs fine-grained analysis of players](https://gigadom.in/2019/07/12/cricketr-learns-new-tricks-performs-fine-grained-analysis-of-players/)
+
 
 ###37. GetPlayerDataHA (Batsmen, Tests)
 ```{r}
