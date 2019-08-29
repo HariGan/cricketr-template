@@ -586,8 +586,7 @@ See [Cricketr learns new tricks : Performs fine-grained analysis of players](htt
 #df=getPlayerDataHA(<profileNo>,tfile="playerTestHA.csv",type="batting", matchType="Test")
 
 #Use the generate file to create a subset of data
-#df1=getPlayerDataOppnHA(infile="playerTestHA.csv",outfile="playerTestFile1.csv",
-#                         startDate=<start Date>,endDate=<end Date>)
+#df1=getPlayerDataOppnHA(infile="playerTestHA.csv",outfile="playerTestFile1.csv",opposition=c(vector of #opposition), homeOrAway=c(home/away/neutral),  startDate=<start Date>,endDate=<end Date>)
 ```
 
 ###38. GetPlayerDataHA (Bowlers, Tests)
@@ -596,8 +595,7 @@ See [Cricketr learns new tricks : Performs fine-grained analysis of players](htt
 #df=getPlayerDataHA(<profileNo>,tfile="playerTestHA.csv",type="bowling", matchType="Test")
 
 #Use the generate file to create a subset of data
-#df1=getPlayerDataOppnHA(infile="playerTestHA.csv",outfile="playerTestFile1.csv",
-#                         startDate=<start Date>,endDate=<end Date>)
+#df1=getPlayerDataOppnHA(infile="playerTestHA.csv",outfile="playerTestFile1.csv",opposition=c(vector of #opposition), homeOrAway=c(home/away/neutral),  startDate=<start Date>,endDate=<end Date>)
 ```
 
 
@@ -608,8 +606,7 @@ See [Cricketr learns new tricks : Performs fine-grained analysis of players](htt
 #df=getPlayerDataHA(<profileNo>,tfile="playerODIHA.csv",type="batting", matchType="ODI")
 
 #Use the generate file to create a subset of data
-#df1=getPlayerDataOppnHA(infile="playerODIHA.csv",outfile="playerODIFile1.csv",
-#                         startDate=<start Date>,endDate=<end Date>)
+#df1=getPlayerDataOppnHA(infile="playerODIHA.csv",outfile="playerODIFile1.csv",opposition=c(vector of #opposition), homeOrAway=c(home/away/neutral),  startDate=<start Date>,endDate=<end Date>)
 ```
 
 ###40. GetPlayerDataHA (Bowlers, ODI)
@@ -618,8 +615,7 @@ See [Cricketr learns new tricks : Performs fine-grained analysis of players](htt
 #df=getPlayerDataHA(<profileNo>,tfile="playerODIHA.csv",type="bowling", matchType="ODI")
 
 #Use the generate file to create a subset of data
-#df1=getPlayerDataOppnHA(infile="playerODIHA.csv",outfile="playerODIFile1.csv",
-#                         startDate=<start Date>,endDate=<end Date>)
+#df1=getPlayerDataOppnHA(infile="playerODIHA.csv",outfile="playerODIFile1.csv",opposition=c(vector of #opposition), homeOrAway=c(home/away/neutral),  startDate=<start Date>,endDate=<end Date>)
 ```
 
 ###41. GetPlayerDataHA (Batsmen, T20)
@@ -629,8 +625,7 @@ See [Cricketr learns new tricks : Performs fine-grained analysis of players](htt
 #df=getPlayerDataHA(<profileNo>,tfile="playerT20HA.csv",type="batting", matchType="T20")
 
 #Use the generate file to create a subset of data
-#df1=getPlayerDataOppnHA(infile="playerT20HA.csv",outfile="playerT20File1.csv",
-#                         startDate=<start Date>,endDate=<end Date>)
+#df1=getPlayerDataOppnHA(infile="playerT20HA.csv",outfile="playerT20File1.csv",opposition=c(vector of #opposition), homeOrAway=c(home/away/neutral),  startDate=<start Date>,endDate=<end Date>)
 ```
 
 ###42. GetPlayerDataHA (Bowlers, T20)
@@ -639,8 +634,7 @@ See [Cricketr learns new tricks : Performs fine-grained analysis of players](htt
 #df=getPlayerDataHA(<profileNo>,tfile="playerT20HA.csv",type="bowling", matchType="T20")
 
 #Use the generate file to create a subset of data
-#df1=getPlayerDataOppnHA(infile="playerT20HA.csv",outfile="playerT20File1.csv",
-#                         startDate=<start Date>,endDate=<end Date>)
+#df1=getPlayerDataOppnHA(infile="playerT20HA.csv",outfile="playerT20File1.csv",opposition=c(vector of #opposition), homeOrAway=c(home/away/neutral),  startDate=<start Date>,endDate=<end Date>)
 ```
 
 
